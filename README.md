@@ -1,27 +1,50 @@
 # WalletGame
 
+**Rules:**
+- Input your name and how much money you have in your wallet $$$
+- Several Animal Shops will be displayed.
+- You can buy animals and see them displayed in your transaction list.
+animal Shops can say Hi to other shops.
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.0.7.
 
-## Development server
+## Web component
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+- The Host app is **<app-root>** the code is in **/src** folder.
+- The web component is registered as **<product-element>** and code is in **/elements** folder.
+- Parent Host needs to import the child web component in order to use it: done in index.html: **custom-element.js**
 
-## Code scaffolding
+## to deploy child web component
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+Go to  **/elements** and run: 
+```
+npm run el-build
+```
 
-## Build
+## Run project
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+Go to  **/** and run: 
+```
+ng serve
+```
 
-## Running unit tests
+## How web component is used in parent host
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+```
+<product-element>
+```
+web component is  wrapped in parent app with  
+```
+<app-wrap-web-component>
+``` 
+this wrap manange/ encapsulate easily inputs and events
 
-## Running end-to-end tests
+## How MicroFrontends Communicate here:
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+### Input
+- With parent: Object Input (primitive can be also used)
+- With Sibilings: listening on Bus Event (attached to window object)
 
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+### Output
+- With parent:  event Emmited on web component Itself
+- With Sibilings: event emmited on bus 
