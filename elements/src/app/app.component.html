@@ -1,0 +1,14 @@
+<div class="container" [style.border]="'3px solid ' + configuration?.color">
+
+  <h2 [style.color]="configuration?.color">#{{configuration?.product}} - {{configuration?.price}} $</h2>
+
+  <ng-container *ngIf="messageList.length">
+    <div style="text-decoration: underline">Messages list:</div>
+    <ul>
+      <li *ngFor="let message of messageList">{{message}}</li>
+    </ul>
+  </ng-container>
+
+  <button (click)="buyProduct()">buy</button>
+  <button (click)="sayHi()">EventBus - say hi to animals!</button>
+</div>

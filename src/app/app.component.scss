@@ -1,0 +1,16 @@
+.animal-shop {
+    display: flex;
+    flex-wrap: wrap;
+    >* {
+        flex-basis:50%
+    }
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    >button {
+        margin: 10px 0px;
+    }
+}

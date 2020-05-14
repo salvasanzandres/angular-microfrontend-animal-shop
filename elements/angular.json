@@ -1,9 +1,9 @@
 {
   "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
-  "version": 1,
+  "version": 1, 
   "newProjectRoot": "projects",
   "projects": {
-    "wallet-game": {
+    "custom-element": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -17,7 +17,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/wallet-game",
+            "outputPath": "dist/custom-element",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -42,7 +42,7 @@
               ],
               "optimization": true,
               "outputHashing": "all",
-              "sourceMap": true,
+              "sourceMap": false,
               "extractCss": true,
               "namedChunks": false,
               "extractLicenses": true,
@@ -66,18 +66,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "wallet-game:build"
+            "browserTarget": "custom-element:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "wallet-game:build:production"
+              "browserTarget": "custom-element:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "wallet-game:build"
+            "browserTarget": "custom-element:build"
           }
         },
         "test": {
@@ -114,15 +114,15 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "wallet-game:serve"
+            "devServerTarget": "custom-element:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "wallet-game:serve:production"
+              "devServerTarget": "custom-element:serve:production"
             }
           }
         }
       }
     }},
-  "defaultProject": "wallet-game"
+  "defaultProject": "custom-element"
 }
