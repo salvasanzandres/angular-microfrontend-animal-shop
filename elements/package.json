@@ -10,7 +10,7 @@
     "e2e": "ng e2e",
     "el-build": "npm run el-build-task && npm run el-package-task",
     "el-build-task": "ng build custom-element --prod --output-hashing=none",
-    "el-package-task": "cat ./dist/custom-element/{polyfills,runtime,main}-es5.js > ./dist/custom-element.js"
+    "el-package-task": "cat ./dist/custom-element/{polyfills,runtime,main}-es5.js > ./../src/assets/custom-element.js"
   },
   "private": true,
   "dependencies": {
